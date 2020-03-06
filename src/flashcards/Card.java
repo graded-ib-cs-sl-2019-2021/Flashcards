@@ -42,4 +42,13 @@ public class Card {
     public boolean isFlipped() {
         return flipped;
     }
+    
+    @Override
+    public String toString() {
+        if (isFlipped()) {
+            return getDef();
+        }else {
+            return getTerm();
+        }
+    }
 }
