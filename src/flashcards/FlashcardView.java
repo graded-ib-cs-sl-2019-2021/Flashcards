@@ -32,6 +32,8 @@ public class FlashcardView extends javax.swing.JFrame {
         btnFlip = new javax.swing.JButton();
         btnPrev = new javax.swing.JButton();
         btnNext = new javax.swing.JButton();
+        btnShuffle = new javax.swing.JButton();
+        btnRandom = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,22 +66,42 @@ public class FlashcardView extends javax.swing.JFrame {
             }
         });
 
+        btnShuffle.setText("Shuffle");
+        btnShuffle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnShuffleActionPerformed(evt);
+            }
+        });
+
+        btnRandom.setText("Random Card");
+        btnRandom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRandomActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(111, 111, 111))
             .addGroup(layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63)
+                .addGap(52, 52, 52)
                 .addComponent(btnFlip, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(108, 108, 108)
+                .addComponent(btnShuffle)
+                .addGap(54, 54, 54)
+                .addComponent(btnRandom)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,7 +113,11 @@ public class FlashcardView extends javax.swing.JFrame {
                     .addComponent(btnFlip)
                     .addComponent(btnPrev)
                     .addComponent(btnNext))
-                .addContainerGap(117, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnShuffle)
+                    .addComponent(btnRandom))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         pack();
@@ -111,6 +137,16 @@ public class FlashcardView extends javax.swing.JFrame {
         // TODO add your handling code here:
         Main.nextButtonPressed();
     }//GEN-LAST:event_btnNextActionPerformed
+
+    private void btnShuffleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShuffleActionPerformed
+        // TODO add your handling code here:
+        Main.shuffleButtonPressed();
+    }//GEN-LAST:event_btnShuffleActionPerformed
+
+    private void btnRandomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRandomActionPerformed
+        // TODO add your handling code here:
+        Main.randomButtonPressed();
+    }//GEN-LAST:event_btnRandomActionPerformed
 
     /**
      * @param args the command line arguments
@@ -151,6 +187,8 @@ public class FlashcardView extends javax.swing.JFrame {
     private javax.swing.JButton btnFlip;
     private javax.swing.JButton btnNext;
     private javax.swing.JButton btnPrev;
+    private javax.swing.JButton btnRandom;
+    private javax.swing.JButton btnShuffle;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea txtCard;
     // End of variables declaration//GEN-END:variables

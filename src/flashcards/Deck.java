@@ -50,4 +50,18 @@ public class Deck {
     public Card getTopCard() {
         return cards[topCard];
     }
+
+    void shuffle() {
+      
+        for (int i = 0; i < numCards; i++) {
+            int randomNumber = (int) (Math.random() * (numCards));
+            Card temp = cards[randomNumber];
+            cards[randomNumber]= cards[i];
+            cards[i] = temp;
+        }
+    }
+
+    void goToRandom() {
+        topCard = (int)(Math.random() * numCards);      
+    }
 }

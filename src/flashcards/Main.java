@@ -24,6 +24,9 @@ public class Main {
             "The set of commands and rules that make a computer do anything."));
         d.addCard(new Card("abstraction",
                 "simplifying to an idea so we can ignore the implementation."));
+        d.addCard(new Card("Bob","The builder"));
+        d.addCard(new Card("Can","He fix it?"));
+        d.addCard(new Card("Yes!", "He can!"));
         //add more cards
         view = new FlashcardView();
         view.setVisible(true);
@@ -53,6 +56,24 @@ public class Main {
     static void nextButtonPressed() {
          // update the model 
         d.next();
+        Card c = d.getTopCard();
+        // read necessary changes
+        String textToShow = c.toString();
+        // update the view
+        view.changeCardText(textToShow);
+    }
+
+    static void shuffleButtonPressed() {
+        d.shuffle();
+        Card c = d.getTopCard();
+        // read necessary changes
+        String textToShow = c.toString();
+        // update the view
+        view.changeCardText(textToShow);
+    }
+
+    static void randomButtonPressed() {
+        d.goToRandom();
         Card c = d.getTopCard();
         // read necessary changes
         String textToShow = c.toString();
